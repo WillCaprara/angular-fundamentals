@@ -1,0 +1,14 @@
+<div class="app">
+    <nav class="nav">
+        <!-- When we have this / route, the class active is going to be added. -->
+        <a *ngFor="let item of nav"
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.exact }">
+            {{item.name}}
+        </a>
+        <!-- Directive via the router which is essentially a placeholder for where our components will be injected -->
+        <!-- When we route to a component, the router-outlet then tells the component where to go. -->
+        <router-outlet></router-outlet>
+    </nav>
+</div>
